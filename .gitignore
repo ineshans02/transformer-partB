@@ -1,0 +1,15 @@
+# virtual env
+.venv/
+.esAI/
+
+# python
+__pycache__/
+*.pyc
+
+# artifacts
+checkpoints/
+logs/
+samples/
+
+# macOS
+.DS_Store
