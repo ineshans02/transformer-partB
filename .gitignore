@@ -6,10 +6,6 @@
 __pycache__/
 *.pyc
 
-# artifacts
-checkpoints/
-logs/
-samples/
 
 # macOS
 .DS_Store
