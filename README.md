@@ -1,26 +1,28 @@
-# Tiny Transformer — Assignment-1 (Part B)
+cat > README.md << 'EOF'
+# Assignment-1: Understanding & Implementing Transformers
+**Author:** Ines Hans Capitan
 
-**Author:** Ines Hans Capitan  
-**Course:** Embedded Systems for AI  
-**Task:** Train a tiny Transformer (character-level) on Tiny Shakespeare and generate 200 tokens from prompts like `ROMEO:` or `JULIET:`.
+This repository contains the implementation and outputs for Assignment-1 (Parts B and C).
 
----
+## Files
+- `model.py` — Transformer model (multi-head self-attention, MLP, LayerNorm, residuals).
+- `train.py` — Training script (saves checkpoint and CSV logs).
+- `generate.py` — Text generation script (writes two 200-token samples).
+- `tinyshakespeare.txt` — Dataset (character-level).
+- `logs/training_log.csv` — Training and validation loss per epoch.
+- `samples/romeo.txt`, `samples/juliet.txt` — Generated samples (200 tokens each).
+- `part_c.tex` (and/or `PART_C_Report.md`) — System analysis for Part C.
 
-## Repo Structure
+## How to Run (same environment used for the assignment)
+Use the existing project virtual environment `.esAI`.
 
-transformer-partB/
-├─ model.py # Transformer model (MHA, MLP, LayerNorm, residuals)
-├─ train.py # training loop, logs CSV per epoch, checkpoint
-├─ generate.py # loads checkpoint and writes 2 samples (Romeo/Juliet)
-├─ tinyshakespeare.txt # dataset (put here)
-├─ vocab.json # saved by train.py
-├─ config.json # saved by train.py
-├─ checkpoints/ # weights (ignored by git)
-├─ logs/ # training_log.csv (ignored by git)
-└─ samples/ # romeo.txt, juliet.txt (ignored by git)
+```bash
+# activate (if not already active)
+source "/Users/ineshans/Desktop/UTSA Fall 2025/Embedded Systems AI/Assignment 1/.esAI/bin/activate"
 
-
-> `.gitignore` excludes `checkpoints/`, `logs/`, `samples/`, and local venvs.
+# ensure PyTorch is available
+"/Users/ineshans/Desktop/UTSA Fall 2025/Embedded Systems AI/Assignment 1/.esAI/bin/pip" install --upgrade pip
+"/Users/ineshans/Desktop/UTSA Fall 2025/Embedded Systems AI/Assignment 1/.esAI/bin/pip" install torch torchvision torchaudio
 
 ---
 
